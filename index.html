@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Control de Asistencia</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #f4f7f6;
+            --primary: #2563eb; 
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --white: #ffffff;
+            --text-main: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 20px;
+        }
+
+        .hero code {
+            font-family: 'JetBrains Mono', monospace;
+            color: #60a5fa;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 45px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-start {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-start:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-no {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        section {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+        }
+
+        .container {
+            background: var(--white);
+            max-width: 1000px;
+            width: 100%;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 5px solid var(--primary);
+        }
+
+        .card h4 { margin-top: 0; color: var(--secondary); }
+
+        .warning-box {
+            background: #fff1f2;
+            border: 1px solid #ffe4e6;
+            padding: 30px;
+            border-radius: 8px;
+            color: #9f1239;
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            background: #1e293b;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <code>[ ANÁLISIS ]</code>
+        <h1>Control de Asistencia Estudiantil</h1>
+        <p class="subtitle">Base de Datos</p>
+        
+        <div class="btn-container">
+            <a href="#datos" class="btn btn-start">Acceder al Sistema</a>
+            <button class="btn btn-no" onclick="alert('vai estuda rapaz')">No</button>
+        </div>
+    </div>
+
+    <div id="contenido">
+        
+        <section id="datos">
+            <div class="container">
+                <h2>Datos Manejados</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Estudiantes</h4>
+                        <ul>
+                            <li>Cédula de Identidad</li>
+                            <li>Nombres y Apellidos</li>
+                            <li>Grupo / Grado</li>
+                            <li>Historial de Faltas</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Registros</h4>
+                        <ul>
+                            <li>Fecha del día</li>
+                            <li>Estado: Presente / Ausente</li>
+                            <li>Hora de ingreso</li>
+                            <li>Justificaciones</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Materia / Docente</h4>
+                        <ul>
+                            <li>Nombre de asignatura</li>
+                            <li>Nombre del profesor</li>
+                            <li>Salón asignado</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Interacciones</h2>
+                <div class="grid">
+                    <div class="card" style="border-top-color: #10b981;">
+                        <h4>Docentes</h4>
+                        <p>Ingresan la asistencia diaria y consultan el historial del grupo.</p>
+                    </div>
+                    <div class="card" style="border-top-color: #f59e0b;">
+                        <h4>Administrativos</h4>
+                        <p>Gestionan las inscripciones, horarios y validan certificados médicos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Operaciones del Sistema</h2>
+                <div class="card" style="width: 100%;">
+                    <p><strong>Registro:</strong> Captura de asistencia en tiempo real.</p>
+                    <p><strong>Consulta:</strong> Búsqueda de historial por estudiante o fecha.</p>
+                    <p><strong>Alerta:</strong> Notificación automática ante exceso de inasistencias.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="warning-box">
+                    <h3>Impacto de la Desorganización</h3>
+                    <p>Sin una base de datos estructurada, el sistema sufriría de:</p>
+                    <ul>
+                        <li><strong>Inconsistencia:</strong> Datos contradictorios entre planillas.</li>
+                        <li><strong>Inseguridad:</strong> Manipulación de registros sin auditoría.</li>
+                        <li><strong>Ineficiencia:</strong> Lentitud extrema para generar reportes finales.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>lukxas-zn.github.io</p>
+    </footer>
+
+</body>
+  </html>
+  
